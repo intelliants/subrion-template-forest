@@ -1,0 +1,71 @@
+
+//
+// Shops slider
+// --------------------------------------------------
+
+.sl-shops {
+
+    &__item {
+        padding: 15px;
+        border: 1px solid #ddd;
+
+        p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}
+
+
+
+//
+// Top categories
+// --------------------------------------------------
+
+.cat-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    margin: 0;
+    position: relative;
+    .clearfix();
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10px;
+      height: 1px;
+      background: #ddd;
+    }
+
+    > a,
+    > a:focus {
+      float: left;
+      color: #000;
+      padding-right: 8px;
+      background: #fff;
+      position: relative;
+      z-index: 10;
+
+      &:hover {
+        color: @link-color;
+        text-decoration: none;
+      }
+    }
+
+    > span {
+      float: right;
+      color: fade(#000, 50%);
+      padding-left: 8px;
+      background: #fff;
+      position: relative;
+      z-index: 10;
+    }
+  }
+}

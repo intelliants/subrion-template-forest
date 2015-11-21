@@ -1,5 +1,5 @@
 <div class="section">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4">
 				<div class="b-feature">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="section call-to-action">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-7">
 				<h2>Join our community</h2>
@@ -43,7 +43,7 @@
 </div>
 
 <div class="section call-to-action call-to-action--center">
-	<div class="container">
+	<div class="container-fluid">
 		<h2>Mobile ready from the ground up.</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit sint ad aliquam enim, libero praesentium distinctio labore eum sit quod totam mollitia omnis.</p>
 		<img src="{$img}dummy/phone.jpg" alt="" class="img-responsive img-rounded center-block">
@@ -52,7 +52,7 @@
 
 {if isset($iaBlocks.verybottom)}
 	<div class="section section-blog">
-		<div class="container">
+		<div class="container-fluid">
 			<h2>What we are up to</h2>
 			{ia_blocks block='verybottom'}
 		</div>

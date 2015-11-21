@@ -40,127 +40,128 @@
 	</head>
 
 	<body class="page-{$core.page.name}">
-		<header class="header"{if $core.config.website_bg} style="background-image: url('{$smarty.const.IA_URL}uploads/{$core.config.website_bg}');"{/if}>
-			<div class="inventory">
-				<div class="container">
-					{ia_blocks block='inventory'}
-				</div>
+		<div class="inventory">
+			<div class="container">
+				<form action="{$smarty.const.IA_URL}search/" class="inventory__search">
+					<input class="form-control" type="text" name="q" placeholder="{lang key='search'}">
+					<button class="btn" type="submit"><span class="fa fa-search"></span></button>
+				</form>
+				{ia_blocks block='inventory'}
 			</div>
+		</div>
+		<div class="container da-wrp">
 			<nav class="navbar navbar-default">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand{if !$core.config.enable_text_logo} navbar-brand--img{/if}" href="{$smarty.const.IA_URL}">
-							{if $core.config.enable_text_logo}
-								{$core.config.logo_text}
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand{if !$core.config.enable_text_logo} navbar-brand--img{/if}" href="{$smarty.const.IA_URL}">
+						{if $core.config.enable_text_logo}
+							{$core.config.logo_text}
+						{else}
+							{if !empty($core.config.site_logo)}
+								<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
 							{else}
-								{if !empty($core.config.site_logo)}
-									<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
-								{else}
-									<img src="{$img}logo.png" alt="{$core.config.site}">
-								{/if}
+								<img src="{$img}logo.png" alt="{$core.config.site}">
 							{/if}
-						</a>
-					</div>
+						{/if}
+					</a>
+				</div>
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						{include file='language-selector.tpl'}
-						{ia_blocks block='account'}
-						{ia_blocks block='mainmenu'}
-					</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					{include file='language-selector.tpl'}
+					{ia_blocks block='account'}
+					{ia_blocks block='mainmenu'}
 				</div>
 			</nav>
 
-			{ia_blocks block='teaser'}
-		</header>
+			<header class="header"{if $core.config.website_bg} style="background-image: url('{$smarty.const.IA_URL}uploads/{$core.config.website_bg}');"{/if}>
 
-		{ia_hooker name='smartyFrontBeforeBreadcrumb'}
+				{ia_blocks block='teaser'}
+			</header>
 
-		{include file='breadcrumb.tpl'}
+			{ia_hooker name='smartyFrontBeforeBreadcrumb'}
 
-		{if $core.config.enable_landing && 'index' == $core.page.name}
-			{include file='page.index.tpl'}
-		{else}
-			{if isset($iaBlocks.verytop)}
-				<div class="verytop">
-					<div class="container">{ia_blocks block='verytop'}</div>
-				</div>
-			{/if}
+			{include file='breadcrumb.tpl'}
 
-			<div class="content">
-				<div class="container">
-					<div class="row">
-						<div class="{width section='content' position='left' tag='col-md-'} aside">
-							{ia_blocks block='left'}
-						</div>
-						<div class="{width section='content' position='center' tag='col-md-'}">
-							<div class="content__wrap">
-								{ia_hooker name='smartyFrontBeforeNotifications'}
-								{include file='notification.tpl'}
+			{if $core.config.enable_landing && 'index' == $core.page.name}
+				{include file='page.index.tpl'}
+			{else}
+				{if isset($iaBlocks.verytop)}
+					<div class="verytop">
+						<div class="container-fluid">{ia_blocks block='verytop'}</div>
+					</div>
+				{/if}
 
-								{ia_blocks block='top'}
+				<div class="content">
+						<div class="row">
+							<div class="{width section='content' position='left' tag='col-md-'} aside">
+								{ia_blocks block='left'}
+							</div>
+							<div class="{width section='content' position='center' tag='col-md-'}">
+								<div class="content__wrap">
+									{ia_hooker name='smartyFrontBeforeNotifications'}
+									{include file='notification.tpl'}
 
-								<div class="content__header">
-									<h1>{$core.page.title}</h1>
-									<ul class="content__actions">
-										{foreach $core.actions as $name => $action}
-											<li>
-												{if 'action-favorites' == $name}
-													{printFavorites item=$item itemtype=$item.item}
-												{else}
-													<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
-														<span class="fa fa-{$name}"></span>
-													</a>
-												{/if}
-											</li>
-										{/foreach}
-									</ul>
+									{ia_blocks block='top'}
+
+									<div class="content__header">
+										<h1>{$core.page.title}</h1>
+										<ul class="content__actions">
+											{foreach $core.actions as $name => $action}
+												<li>
+													{if 'action-favorites' == $name}
+														{printFavorites item=$item itemtype=$item.item}
+													{else}
+														<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
+															<span class="fa fa-{$name}"></span>
+														</a>
+													{/if}
+												</li>
+											{/foreach}
+										</ul>
+									</div>
+
+									{ia_hooker name='smartyFrontBeforeMainContent'}
+
+									<div class="content__body">
+										{$_content_}
+									</div>
+
+									{ia_hooker name='smartyFrontAfterMainContent'}
+
+									{ia_blocks block='bottom'}
 								</div>
-
-								{ia_hooker name='smartyFrontBeforeMainContent'}
-
-								<div class="content__body">
-									{$_content_}
-								</div>
-
-								{ia_hooker name='smartyFrontAfterMainContent'}
-
-								{ia_blocks block='bottom'}
+							</div>
+							<div class="{width section='content' position='right' tag='col-md-'} aside">
+								{ia_blocks block='right'}
 							</div>
 						</div>
-						<div class="{width section='content' position='right' tag='col-md-'} aside">
-							{ia_blocks block='right'}
-						</div>
-					</div>
 				</div>
-			</div>
 
-			{if isset($iaBlocks.verybottom)}
-				<div class="verybottom">
-					<div class="container">{ia_blocks block='verybottom'}</div>
+				{if isset($iaBlocks.verybottom)}
+					<div class="verybottom">
+						{ia_blocks block='verybottom'}
+					</div>
+				{/if}
+			{/if}
+
+			{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}
+				<div class="footer-blocks">
+						<div class="row">
+							<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
+							<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
+							<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
+							<div class="{width section='footer-blocks' position='footer4' tag='col-md-'}">{ia_blocks block='footer4'}</div>
+						</div>
 				</div>
 			{/if}
-		{/if}
-
-		{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}
-			<div class="footer-blocks">
-				<div class="container">
-					<div class="row">
-						<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
-						<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
-						<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
-						<div class="{width section='footer-blocks' position='footer4' tag='col-md-'}">{ia_blocks block='footer4'}</div>
-					</div>
-				</div>
-			</div>
-		{/if}
+		</div>
 
 		<footer class="footer">
 			<div class="container">
@@ -172,10 +173,9 @@
 						<p class="copyright">&copy; {$smarty.server.REQUEST_TIME|date_format:'%Y'} {lang key='powered_by_subrion'}</p>
 					</div>
 					<div class="col-md-6">
-						<a href="#" class="back-to-top js-back-to-top"><span class="fa fa-angle-up"></span> {lang key='back_to_top'}</a>
+						<a href="#" class="back-to-top js-back-to-top"><span class="fa fa-angle-up"></span></a>
 						{if $core.config.website_social}
 							<div class="social">
-								<h4>Share your love</h4>
 								{if $core.config.website_social_t}<a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter"></span></a>{/if}
 								{if $core.config.website_social_f}<a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook"></span></a>{/if}
 								{if $core.config.website_social_g}<a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus"></span></a>{/if}

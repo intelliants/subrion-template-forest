@@ -4,9 +4,42 @@
 // --------------------------------------------------
 
 .inventory {
-  // display: none;
-  background: fade(@inventory-bg, 30%);
-  font-size: 12px;
+  background: @inventory-bg;
+  padding: @vertical-rhythm 0;
+
+  > .container {
+    // .wrp-margin();
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__search {
+    float: left;
+    margin: 0;
+    width: 220px;
+    position: relative;
+
+    .form-control {
+      border-width: 2px;
+      padding-right: 44px;
+      .box-shadow(none);
+    }
+
+    .btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: transparent;
+      border-color: transparent;
+      color: #ccc;
+      // border-width: 2px;
+      // border-left-color: #fff;
+
+      &:focus {
+        outline: 0 none;
+      }
+    }
+  }
 
   .nav-inventory {
     > li {
@@ -19,6 +52,8 @@
           line-height: @inventory-height;
           color: @inventory-link-color; 
           background: none;
+          text-transform: none;
+          font-weight: normal;
         }
 
         &:hover {

@@ -22,6 +22,11 @@ body {
   }
 }
 
+.da-wrp {
+  background: #fff;
+  .box-shadow(0 5px 30px rgba(0,0,0,0.15));
+}
+
 
 
 //
@@ -46,6 +51,12 @@ body {
 
 .breadcrumbs {
   background: #f2f2f2;
+  .wrp-margin();
+
+  > .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .breadcrumb {
     float: left;
@@ -64,11 +75,13 @@ body {
 .verytop {
   background: #f2f2f2;
   padding: @vertical-rhythm*2 0;
+  .wrp-margin();
 }
 
 .content {
   padding: @vertical-rhythm*2 0;
   background: #fff;
+  .wrp-margin();
 
   &__header {
     .clearfix();
@@ -116,6 +129,7 @@ body {
 .verybottom {
   padding: @vertical-rhythm*2 0;
   border-top: 1px solid #ddd;
+  .wrp-margin();
 }
 
 .highlight {

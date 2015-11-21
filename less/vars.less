@@ -11,10 +11,10 @@
 // template colors
 
 @brand-dark:       #141b1f;
-@brand-primary:    #38b7ea;
-@link-color:       #38b7ea;
+@brand-primary:    #ff6b50;
+@link-color:       #ff6b50;
 @link-hover-color: darken(@link-color, 15%);
-@body-bg:          #fff;
+@body-bg:          #f0f0f0 url('../img/bg-pattern.png') 0 0;
 @footer-bg:        #f2f2f2;
 @headings-color:   inherit;
 
@@ -32,14 +32,14 @@
 @border-color:              #ddd;
 
 // Inventory
-@inventory-bg:                 @brand-dark;
-@inventory-height:             30px;
-@inventory-link-color:         fade(#fff, 30%);
-@inventory-link-hover-color:   fade(#fff, 50%);
-@inventory-link-active-color:  fade(#fff, 70%);
+@inventory-bg:                 transparent;
+@inventory-height:             34px;
+@inventory-link-color:         fade(@text-color, 50%);
+@inventory-link-hover-color:   fade(@text-color, 65%);
+@inventory-link-active-color:  @brand-primary;
 
 // Basics of a navbar
-@navbar-height:                    60px;
+@navbar-height:                    120px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             0;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -47,12 +47,12 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #fff;
-@navbar-default-bg:                transparent;
+@navbar-default-bg:                #ff6b50;
 @navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                fade(#fff, 60%);
-@navbar-default-link-hover-color:          fade(#fff, 80%);
+@navbar-default-link-color:                fade(#000, 60%);
+@navbar-default-link-hover-color:          fade(#000, 80%);
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            transparent;
