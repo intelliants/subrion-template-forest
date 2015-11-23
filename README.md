@@ -14,7 +14,7 @@ git clone https://github.com/intelliants/subrion-template-forest.git ./forest
 ```
 Voila! Just activate it in your Dashboard / Extensions / Templates
 
-### Configuration
+### Configuration for Coupons Script
 This template is ideal for [Coupons script](http://www.subrion.com/product/coupons-script.html). To get the best experience, please follow these instructions on how to place content blocks. Go to Admin Dashboard -> Content -> Blocks and edit each block accordingly.
 
 1. Disable blocks: Teaser block, Call to action
