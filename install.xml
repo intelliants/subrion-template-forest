@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template name="forest">
 	<title>Forest</title>
-	<summary>Bootstrap 3 developer template</summary>
+	<summary>Nice looking template</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.0.0</version>
-	<date>2015-10-21</date>
+	<version>4.0.0</version>
+	<date>2015-11-23</date>
 	<compatibility>4.0</compatibility>
 
 	<screenshots>
 		<screenshot name="1.jpg"><![CDATA[Home page]]></screenshot>
+		<screenshot name="2.jpg"><![CDATA[Coupons script activated]]></screenshot>
 	</screenshots>
 
 	<layout>
