@@ -20,3 +20,4 @@ This template is ideal for [Coupons script](http://www.subrion.com/product/coupo
 1. Disable blocks: Teaser block, Call to action
 2. Popular shops -> position: verytop
 3. Coupon Categories -> position: left, order: 1, Visible everywhere: true
+4. Coupon of the Day -> position: right
