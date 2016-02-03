@@ -47,6 +47,9 @@
 					<button class="btn" type="submit"><span class="fa fa-search"></span></button>
 				</form>
 				{ia_blocks block='inventory'}
+				<ul class="nav navbar-nav navbar-right nav-inventory">
+					<li{if 'favorites' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-heart text-warning"></span> {lang key='favorites'}</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="container da-wrp">
