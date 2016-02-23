@@ -6,7 +6,7 @@
 			<span class="fa fa-calendar"></span>
 			{lang key='on'} {$item.date_added|date_format:$core.config.date_format}
 		</span>
-		<span class="ia-item-view__info__item"><span class="fa fa-folder"></span> <a href="{ia_url item='articlecats' data=$item type='url'}">{$item.category_title}</a></span>
+		<span class="ia-item-view__info__item"><span class="fa fa-folder"></span> <a href="{ia_url item='categs' data=$item type='url'}">{$item.category_title}</a></span>
 		<span class="ia-item-view__info__item"><span class="fa fa-eye"></span> {$item.views_num} {lang key='views'}</span>
 	</div>
 
