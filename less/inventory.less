@@ -7,10 +7,20 @@
   background: @inventory-bg;
   padding: @vertical-rhythm 0;
 
+  @media (max-width: @grid-float-breakpoint) {
+    padding: 10px 0;
+  }
+
   > .container {
     // .wrp-margin();
     padding-left: 30px;
     padding-right: 30px;
+
+    @media (max-width: @grid-float-breakpoint) {
+      padding-left: 10px;
+      padding-right: 10px;
+      .clearfix();
+    }
   }
 
   &__search {
@@ -38,6 +48,11 @@
       &:focus {
         outline: 0 none;
       }
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      float: none;
+      width: 100%;
     }
   }
 
@@ -73,4 +88,6 @@
       }
     }
   }
+
+ 
 }

@@ -165,6 +165,16 @@
         color: lighten(@text-color, 10%);
       }
     }
+
+    @media (max-width: @grid-float-breakpoint) {
+      float: none;
+      margin-bottom: 10px;
+
+      a {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
   }
 
   &__title {
@@ -272,6 +282,10 @@
 
     @media (min-width: @grid-float-breakpoint) {
       max-width: 100%;
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin-bottom: 15px;
     }
   }
 

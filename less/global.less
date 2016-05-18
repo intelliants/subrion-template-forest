@@ -25,6 +25,10 @@ body {
 .da-wrp {
   background: #fff;
   .box-shadow(0 5px 30px rgba(0,0,0,0.15));
+
+  @media (max-width: @grid-float-breakpoint) {
+    .box-shadow(none);
+  }
 }
 
 
@@ -76,12 +80,22 @@ body {
   background: #f2f2f2;
   padding: @vertical-rhythm*2 0;
   .wrp-margin();
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding-top: @vertical-rhythm;
+    padding-bottom: @vertical-rhythm;
+  }
 }
 
 .content {
   padding: @vertical-rhythm*2 0;
   background: #fff;
   .wrp-margin();
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding-top: @vertical-rhythm;
+    padding-bottom: @vertical-rhythm;
+  }
 
   &__header {
     .clearfix();
@@ -92,6 +106,10 @@ body {
     h1 {
       float: left;
       .font-normalize(28px, 0);
+
+      @media (max-width: @grid-float-breakpoint) {
+        float: none;
+      }
     }
   }
 
@@ -100,6 +118,10 @@ body {
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    @media (max-width: @grid-float-breakpoint) {
+      float: none;
+    }
 
     > li {
       float: left;
@@ -113,6 +135,11 @@ body {
         &:hover {
           color: fade(@text-color, 70%);
           text-decoration: none;
+        }
+
+        @media (max-width: @grid-float-breakpoint) {
+          margin-left: 0;
+          margin-right: @vertical-rhythm/2;
         }
       }
     }
@@ -130,10 +157,24 @@ body {
   padding: @vertical-rhythm*2 0;
   border-top: 1px solid #ddd;
   .wrp-margin();
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding-top: @vertical-rhythm;
+    padding-bottom: @vertical-rhythm;
+  }
 }
 
 .highlight {
   background: #fde35b;
+}
+
+@media (max-width: @grid-float-breakpoint) {
+  .call-to-action {
+    
+    .text-right {
+      text-align: center;
+    }
+  }
 }
 
 

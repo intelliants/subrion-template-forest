@@ -47,12 +47,14 @@
 					<button class="btn" type="submit"><span class="fa fa-search"></span></button>
 				</form>
 				{ia_blocks block='inventory'}
-				<ul class="nav navbar-nav navbar-right nav-inventory">
+				<ul class="nav navbar-nav navbar-right nav-inventory hidden-xs hidden-sm">
 					<li{if 'favorites' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-heart text-warning"></span> {lang key='favorites'}</a></li>
 				</ul>
 			</div>
 		</div>
+
 		<div class="container da-wrp">
+		
 			<nav class="navbar navbar-default">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -149,7 +151,9 @@
 
 				{if isset($iaBlocks.verybottom)}
 					<div class="verybottom">
-						{ia_blocks block='verybottom'}
+						<div class="container-fluid">
+							{ia_blocks block='verybottom'}
+						</div>
 					</div>
 				{/if}
 			{/if}
@@ -164,6 +168,7 @@
 						</div>
 				</div>
 			{/if}
+			
 		</div>
 
 		<footer class="footer">

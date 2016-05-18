@@ -13,6 +13,11 @@
 	// .panel-heading {
 	// 	color: lighten(@brand-dark, 24%);
 	// }
+
+	@media (max-width: @grid-float-breakpoint) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 }
 
 
@@ -22,6 +27,11 @@
 
 .footer {
 	padding: 60px 0 100px;
+
+	@media (max-width: @grid-float-breakpoint) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 
 	> .container {
 		position: relative;
@@ -110,6 +120,10 @@
 			}
 		}
 	}
+
+	@media (max-width: @grid-float-breakpoint) {
+		padding-left: 0;
+	}
 }
 
 
@@ -137,5 +151,11 @@
 	&:hover {
 		text-decoration: none;
 		background: darken(@brand-primary, 10%);
+	}
+
+	@media (max-width: @grid-float-breakpoint) {
+		float: none;
+		width: 30px;
+		margin-bottom: 15px;
 	}
 }

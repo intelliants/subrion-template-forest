@@ -1,7 +1,7 @@
 {if 'mainmenu' == $position}
 	{ia_menu menus=$menu.contents class="nav navbar-nav navbar-right nav-main {$menu.classname}"}
 {elseif 'inventory' == $position}
-	{ia_menu menus=$menu.contents class="nav navbar-nav navbar-right nav-inventory {$menu.classname}"}
+	{ia_menu menus=$menu.contents class="nav navbar-nav navbar-right nav-inventory hidden-xs hidden-sm {$menu.classname}"}
 {elseif 'account' == $position}
 	{if 'account' == $menu.name && $member && $core.config.members_enabled}
 		<ul class="nav navbar-nav navbar-right nav-account">
@@ -13,11 +13,13 @@
 				{ia_hooker name='smartyFrontInsideAccountBox'}
 				{ia_menu menus=$menu.contents class='dropdown-menu' loginout=true}
 			</li>
+			<li class="{if 'favorites' == $core.page.name}active{/if} hidden-desktop"><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-heart text-warning"></span> {lang key='favorites'}</a></li>
 		</ul>
 	{else}
 		<ul class="nav navbar-nav navbar-right">
 			<li{if 'login' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}login/">{lang key='login'}</a></li>
 			<li{if 'registration' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}registration/">{lang key='register'}</a></li>
+			<li class="{if 'favorites' == $core.page.name}active{/if} hidden-desktop"><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-heart text-warning"></span> {lang key='favorites'}</a></li>
 		</ul>
 	{/if}
 {elseif in_array($position, array('left', 'right', 'user1', 'user2', 'top'))}
