@@ -5,7 +5,7 @@
 				{foreach $core.page.breadcrumb as $entry}
 					{if $entry.url && !$entry@last}
 						<li typeof="v:Breadcrumb">
-							<a href="{$entry.url}"{if isset($entry.no_follow) && $entry.no_follow} rel="nofollow"{/if} rel="v:url" property="v:title">{$entry.caption}</a>
+							<a href="{$entry.url}"{if !empty($entry.no_follow) && $entry.no_follow} rel="nofollow"{/if} rel="v:url" property="v:title">{$entry.caption}</a>
 						</li>
 					{else}
 						<li class="active">{$entry.caption}</li>
@@ -25,7 +25,7 @@
 						</a>
 						<ul class="dropdown-menu pull-right">
 							{section action $core.page.info.actions start=2}
-								{if isset($core.page.info.actions[action].divider) && $core.page.info.actions[action].divider == '1'}
+								{if !empty($core.page.info.actions[action].divider) && $core.page.info.actions[action].divider == '1'}
 									<li class="divider"></li>
 								{/if}
 								<li>

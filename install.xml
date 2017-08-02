@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template name="forest">
+<module type="template" name="forest">
 	<title>Forest</title>
 	<summary>Nice looking template</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>4.0.2</version>
-	<date>2016-05-18</date>
-	<compatibility>4.0</compatibility>
+	<version>4.1.0</version>
+	<date>2017-08-02</date>
+	<compatibility>4.1</compatibility>
 
 	<screenshots>
 		<screenshot name="1.jpg"><![CDATA[Home page]]></screenshot>
@@ -242,7 +242,7 @@ that allows you to build websites for any purpose. Yes, from blog to corporate m
 			   status="active" 
 			   type="html">
 			<![CDATA[
-<p>Forget the hours of programming simple things. Use Subrion framework API to add extra stuff using hooks, plugins, & packages.</p>
+<p>Forget the hours of programming simple things. Use Subrion framework API to add extra stuff using hooks, plugins, & modules.</p>
 			]]>
 		</block>
 		<block name="footer4" 
